@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Eiichi Yamamoto</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.sound.min.js"></script>
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+
+  <body>
+
+    <script src="app_AI2_Yamamoto.js"></script>
+    <script src="grain_AI2_Yamamoto.js"></script>
+
+    <div class="button-container">
+      <button id="custom-button" onclick="window.location.reload()">Generate</button>
+    </div>
+
+    <script id="fxhash-snippet">
+        let alphabet = "123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ"
+        var fxhash = "oo" + Array(49).fill(0).map(_=>alphabet[(Math.random()*alphabet.length)|0]).join('');
+        let b58dec = str=>[...str].reduce((p,c)=>p*alphabet.length+alphabet.indexOf(c)|0, 0);
+        let fxhashTrunc = fxhash.slice(2);
+        let regex = new RegExp(".{" + ((fxhashTrunc.length/4)|0) + "}", 'g');
+        let hashes = fxhashTrunc.match(regex).map(h => b58dec(h));
+        function rand() {
+          return Math.floor(Math.random() * 4294967296);
+        }
+        let sfc32 = (a, b, c, d) => {
+          return () => {
+            a ^= rand();
+            b ^= rand();
+            c ^= rand();
+            d ^= rand();
+            var t = (a + b | 0) * c | 0;
+            a = b ^ b >>> 5;
+            b = c + (c << 3) | 0;
+            c = (c << 21 | c >>> 11) + d | 0;
+            d = d + 1 | 0;
+            return ((t >>> 0) + 1) / 4294967296;
+          };
+        };
+
+        var fxrand = sfc32(...hashes)
+        var isFxpreview = new URLSearchParams(window.location.search).get('preview') === "1"
+        function fxpreview() {
+          console.log("Done!")
+        }
+      </script>
+  </body>
+</html>

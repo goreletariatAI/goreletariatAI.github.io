@@ -1,0 +1,145 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  align-items: center;
+  align-content: center;
+}
+
+.q-container {
+  color: white;
+  background-color: black;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 58px;
+  background-color: black;
+  color: white;
+}
+
+.row {
+  background-color: black;
+  color: white;
+  margin: 10px;
+}
+
+.column {
+  flex: 1;
+  margin: 10px;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+.column img {
+  width: 180px;
+  height: 180px;
+  display: block;
+  border-radius: 6px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.button-container {
+  margin-top: 50px;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.button-container2 {
+  margin-top: 205px;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.referinta-button {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  display: inline-block; 
+}
+
+#custom-button {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 1000px;
+  font-size: 16px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  cursor: pointer;
+  transition: background-color 0s ease;
+}
+
+#custom-button:hover {
+  color: wheat;
+  border: 1px solid black;
+}
+
+#custom-button_DC {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 1000px;
+  cursor: pointer;
+  font-size: 35px;
+  font-weight: 500;
+  padding: 10px 20px;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+#custom-button_DC:hover {
+  color: black;
+  border: 1px solid wheat;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .gallery img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .button-container {
+    margin-top: 100px;
+    margin-bottom: 200px;
+  }
+
+  .button-container2 {
+    margin-top: 400px;
+    margin-bottom: 200px;
+  }
+
+  #custom-button {
+    padding: 20px 40px;
+    font-size: 32px;
+  }
+
+  #custom-button_DC {
+    padding: 20px 40px;
+    font-size: 50px;
+  }
+
+  #stevens-button {
+    font-size: 18;
+  }
+
+  .referinta-button button {
+    padding: 15px 25px;
+    font-size: 25px;
+}
+
+  h1 {
+    font-size: 48px;
+  }
+}
