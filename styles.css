@@ -103,7 +103,7 @@ body, html {
   border: 1px solid wheat;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
 
   .gallery img {
     width: 300px;
