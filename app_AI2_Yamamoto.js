@@ -22,7 +22,7 @@ function restart() {
   mainCanvas.position((windowWidth - width) / 2, (windowHeight - height) / 2);
   canv2Wid = width;
   canv2Hgt = height;
-  if (windowWidth <= 600) {
+  if (windowWidth <= 900) {
     canvasWidth = windowWidth;
     canvasHeight = windowWidth * 3 / 4;
     resizeCanvas(canvasWidth, canvasHeight);
